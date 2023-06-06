@@ -32,4 +32,18 @@ the chief objective of this program is organization of books and things in prope
     1. maintain to keep objects in their place. by encouraging audit.
     1. quickly find objets .based on search patterns.
     1. quickly tell what is the correct place of the object.
-
+1. The basic architecture is as below.
+    ````mermaid
+    ---
+    title: Basic Architecture of software
+    ---
+    flowchart TD
+        A[Android] -->|API| CS(Web Client)
+        WC -->|API| CS(Core server)
+        CS --> RDBMS(MySQL)
+        CS --> INM(Redis)
+        A -->|cache| AC(Autocomplete)
+        AC -->|API| CL(C library for fast delivery)
+        CL --> INM
+        INM --> CL
+    ````
