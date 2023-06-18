@@ -38,9 +38,11 @@ the chief objective of this program is organization of books and things in prope
     title: Basic Architecture of software
     ---
     flowchart TD
-        A[Android] -->|API| CS(Web Client)
-        WC -->|API| CS(Core server)
+        A[Android] -->|API| SCW(Client co-located with Server)
+        WC(Webclient) -->|API| SCW
+        SCW --> CS(Core Server)
         CS --> RDBMS(MySQL)
+        RDBMS --> CS
         CS --> INM(Redis)
         A -->|cache| AC(Autocomplete)
         AC -->|API| CL(C library for fast delivery)

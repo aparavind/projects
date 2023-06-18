@@ -1,0 +1,12 @@
+  285  unzip hiredis-1.1.0.zip 
+  286  ls -lrth
+  287  unip redis-7.0.11.zip 
+  288  unzip redis-7.0.11.zip 
+  289  ls -lrth
+  290  cd redis-7.0.11
+  291  make USE_SYSTEMD=yes
+  292  apt install libsystemd-dev
+  293  sudo apt install libsystemd-dev
+  294  make USE_SYSTEMD=yes
+  295  make test
+  296  history
