@@ -120,6 +120,8 @@
 |<b><u>Sr. |  <b><u>from to  | <b><u>Used for |
 |4-6 | xxa  | room |
 |4-6 | xxb  | shelf |
+|4-6 | xxc  | latlong |
+
 
 ### 4-6 object identified for physical objects
 |4-6 | 
