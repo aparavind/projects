@@ -1,0 +1,79 @@
+/* Create your proto file or upload a proto file and edit with this editor.
+Select the languages you want your file to compile and compile. */
+
+/* Product Service Example */
+
+syntax = "proto3";
+
+message AddBlock{
+    string name = 1;
+}
+
+message ResponseBlock{
+    int32 id = 1;
+}
+
+message AddItem{
+    string name = 1;
+    int32 holdingBlock = 2;
+}
+
+message ResponseItem{
+    int32 id = 1;
+}
+
+message RemoveBlock{
+    int32 id = 1;
+}
+
+message ResponseRemoveBlock{
+    int32 status = 1;
+}
+
+
+message removeItem{
+    int32 id = 1;
+}
+
+message ResponseRemoveItem{
+    int32 status = 1;
+}
+
+
+
+message shiftItem{
+    int32 id = 1;
+    int32 oldBlock = 2;
+    int32 newBlock = 3;
+}
+
+message ResponseShiftItem{
+    int32 
+}
+
+message recorrectItem{
+    int32 id = 1;
+    int32 existingIncorrectBlock = 2;
+    int32 correctBlock = 3
+}
+
+
+    
+message initiateAudit{
+    int32 blockId = 1;
+}
+
+message startAuditBlock{
+    int32 id = 1;
+
+}
+
+
+message confirmItemInBlock{
+    int32 auditId = 1;
+    int32 itemId = 2;
+}
+
+message endAudit{
+    int32 auditId = 1;
+}
