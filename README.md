@@ -44,6 +44,7 @@ the chief objective of this program is organization of books and things in prope
         CS --> RDBMS(MySQL)
         RDBMS --> CS
         CS --> INM(Redis)
+        INM --> CS
         A -->|cache| AC(Autocomplete)
         AC -->|API| CL(C library for fast delivery)
         CL --> INM
