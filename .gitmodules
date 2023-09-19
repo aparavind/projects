@@ -1,0 +1,3 @@
+[submodule "submodules/terraform-aws-components"]
+	path = submodules/terraform-aws-components
+	url = https://github.com/cloudposse/terraform-aws-components.git
