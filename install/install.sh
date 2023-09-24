@@ -39,3 +39,5 @@ cmdpsf()
 
 cmdpsf docker "docker ps"
 cmdpsf aws "aws help"
+
+docker run -v "$PWD:/opt/mounted" -v "/home/aravind/.aws:/opt/.aws" -i -t hashicorp/terraform:latest -chdir=/opt/mounted destroy^
