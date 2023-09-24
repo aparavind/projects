@@ -2,3 +2,8 @@
 *.pb-c.c
 *.pb-c.h
 
+## for ignoring terraform plans done
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
