@@ -3,6 +3,13 @@ green='\033[0;32m'
 clear='\033[0m'
 red='\033[0;31m'
 
+
+echo "welcome to installation guide"
+echo "This module will basically help in settin up the configuration"
+echo "part 1 is createon of a workspace.. where all the relevant section will be transferred"
+echo "from there all the things will be copied"
+# 
+
 ecgr()
 {
     echo -n -e "$green$@$clear"
@@ -55,10 +62,13 @@ run_terraform()
 
 
 cmdpsf docker "docker ps"
-cmdpsf aws "aws help"
+cmdpsf aws "aws configure list-profiles"
 
 ## create spot instance of ec2
 cwd=`dirname $0`
+cd $cwd/../
+
+## create compile instance
 cd $cwd/terraform/compile-instance
 run_terraform init && \
 run_terraform plan && \

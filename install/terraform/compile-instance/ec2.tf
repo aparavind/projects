@@ -21,7 +21,7 @@ module "ec2_spot_instance" {
   spot_price           = "0.60"
   spot_type            = "persistent"
 
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   key_name               = "book-library-key"
   monitoring             = true
   vpc_security_group_ids = ["sg-02104a3611f36db90"]
@@ -31,4 +31,15 @@ module "ec2_spot_instance" {
     Terraform   = "true"
     Environment = "dev"
   }
+}
+
+# generate inventory file for Ansible
+resource "local_file" "hosts_cfg" {
+  content = templatefile("${path.module}/templates/hosts.tpl",
+    {
+      kafka_processors = aws_instance.kafka_processor.*.public_ip
+      test_clients = aws_instance.test_client.*.public_ip
+    }
+  )
+  filename = "../ansible/inventory/hosts.cfg"
 }
